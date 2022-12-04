@@ -85,7 +85,10 @@ main{
 }
 
 .producto-imagen{
-    max-width: 70%;
+    background-color: #E25822;
+    position: relative;
+    width:250px;
+    height: 250px;
     border-radius: 1rem;
 }
 

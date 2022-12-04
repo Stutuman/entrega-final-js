@@ -22,16 +22,16 @@
         <nav>
             <ul class="menu">
                 <li>
-                    <button class="boton-menu boton-init activo"><i class="bi bi-box-fill"></i>AllProducts</button>
+                    <button id="todo" class="boton-menu boton-init activo"><i class="bi bi-box-fill"></i>AllProducts</button>
                 </li>
                 <li>
-                    <button class="boton-menu boton-init"><i class="bi bi-mouse"></i>Auriculares</button>
+                    <button id="auriculares" class="boton-menu boton-init"><i class="bi bi-mouse"></i>Auriculares</button>
                 </li>
                 <li>
-                    <button class="boton-menu boton-init"><i class="bi bi-mic"></i>Microfonos</button>
+                    <button id="microfonos" class="boton-menu boton-init"><i class="bi bi-mic"></i>Microfonos</button>
                 </li>
                 <li>
-                    <button class="boton-menu boton-init"><i class="bi bi-webcam"></i>Webcams</button>
+                    <button id="webcams" class="boton-menu boton-init"><i class="bi bi-webcam"></i>Webcams</button>
                 </li>
                 <li>
                     <a class="boton-menu carrito-menu" href="./pages/carrito.html"><i class="bi bi-cart"></i>carrito <span class="numero">0</span></a>
@@ -46,40 +46,9 @@
 
       </aside>
       <main>
-        <h2 class="titleInit"> All Products</h2>
-        <div class="contenedor-productos">
-            <div class="producto">
-                <img class="producto-imagen" src="./imagesProducts/auricularesKotion.jpg" alt="">
-                <div class="product-contain">
-                    <h3 class="producto-name">auriculares Kotion</h3>
-                    <p class="producto-precio">$1000</p>
-                    <button class="producto-agregar">agregar carrito </button>
-                </div>
-            </div>
-            <div class="producto">
-                <img class="producto-imagen" src="./imagesProducts/auricularesKotion.jpg" alt="">
-                <div class="product-contain">
-                    <h3 class="producto-name">auriculares Kotion</h3>
-                    <p class="producto-precio">$1000</p>
-                    <button class="producto-agregar">agregar carrito </button>
-                </div>
-            </div>
-            <div class="producto">
-                <img class="producto-imagen" src="./imagesProducts/auricularesKotion.jpg" alt="">
-                <div class="product-contain">
-                    <h3 class="producto-name">auriculares Kotion</h3>
-                    <p class="producto-precio">$1000</p>
-                    <button class="producto-agregar">agregar carrito </button>
-                </div>
-            </div>
-            <div class="producto">
-                <img class="producto-imagen" src="./imagesProducts/auricularesKotion.jpg" alt="">
-                <div class="product-contain">
-                    <h3 class="producto-name">auriculares Kotion</h3>
-                    <p class="producto-precio">$1000</p>
-                    <button class="producto-agregar">agregar carrito </button>
-                </div>
-            </div>
+        <h2 class="titleInit" id="title-init"> All Products</h2>
+        <div id="contenedor-productos" class="contenedor-productos">
+            
 
 
         </div>
@@ -98,6 +67,7 @@
         integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
         crossorigin="anonymous"></script>
         <script src="archivo.js"></script>
+        <script src="objets.js"></script>
         
 </body>
 </html>
