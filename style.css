@@ -34,10 +34,12 @@ aside{
     justify-content: space-between;
 }
 .logo{
+    text-align: center;
     font-weight: 400;
-    font-size: 1.3rem;
+    font-size: 2.3rem;
     
 }
+
 .menu{
 display: flex;
 flex-direction: column;

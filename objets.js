@@ -1,5 +1,5 @@
 let stockProductos = [
-{id: "auricular-01",categoria:{nombre:"auriculares",id:"auriculares"} , titulo: "auriculares kotion", precio: 30, img: './imagesProducts/auricularesKotion.jpg'},
+{id: "auricular-01",categoria:{nombre:"auriculares",id:"auriculares"} , titulo: "auriculares kotion", precio: 30, img: 'imagesProducts/auricularesKotion.jpg'},
 {id: "auricular-02",categoria:{nombre:"auriculares",id:"auriculares"} , titulo: "auricularesGreen", precio: 40 , img: 'imagesProducts/auricularGreen.jpg'},
 {id: "auricular-03",categoria:{nombre:"auriculares",id:"auriculares"} , titulo: "auriculares logitech", precio: 55 , img: 'imagesProducts/auricularLogitech.jpg'},
 {id: "auricular-04",categoria:{nombre:"auriculares",id:"auriculares"} , titulo: "auricularWhite", precio: 23 , img: 'imagesProducts/auricularWhite.jpg'},
@@ -17,9 +17,8 @@ const contengoProductos= document.querySelector("#contenedor-productos");
 const botonesMenu = document.querySelectorAll(".boton-init")
 const titulo = document.querySelector("#title-init")
 let agregar = document.querySelectorAll(".producto-agregar")
+const number = document.querySelector("#number")
 
-
-console.log(botonesMenu)
 function cargarProductos(elegirProducto){
 contengoProductos.innerHTML = "";
 
@@ -36,6 +35,8 @@ elegirProducto.forEach(producto =>{
                 </div>`;
                 contengoProductos.append(div);
 })
+botonesNuevos()
+console.log(agregar)
 }
 
 cargarProductos(stockProductos);
@@ -59,3 +60,46 @@ const productosBoton = stockProductos.filter(producto => producto.categoria.id =
         
     })
 });
+
+function botonesNuevos(){
+    agregar = document.querySelectorAll(".producto-agregar");
+
+    agregar.forEach(boton => {
+        boton.addEventListener("click", agregarCarrito)
+    })
+}
+let productoCarrito;
+
+let productoEnCarritoLS = localStorage.getItem("productos-en-carro")
+
+if(productoEnCarritoLS){
+     productoCarrito = JSON.parce(productoEnCarritoLS);
+     actNumber();
+}else{
+    productoCarrito = [];
+}
+
+
+function agregarCarrito(e){
+const idBoton = e.currentTarget.id;
+
+const productoAgregar = stockProductos.find(producto => producto.id === idBoton);
+
+
+if(productoCarrito.some(producto => producto.id === idBoton)){
+    const index = productoCarrito.findIndex( producto => producto.id === idBoton);
+    productoCarrito[index].cantidad++
+
+}else {
+    productoAgregar.cantidad = 1;
+    productoCarrito.push(productoAgregar)
+}
+
+actNumber();
+localStorage.setItem("producto-en-carro",JSON.stringify(productoCarrito))
+}
+
+function actNumber(){
+    let numero = productoCarrito.reduce((acc, producto) => acc + producto.cantidad,0) 
+number.innerText = numero;
+}
