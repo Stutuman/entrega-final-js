@@ -7,6 +7,8 @@ const carroBotones= document.querySelector("#carritoBotones")
 let botonEliminar = document.querySelectorAll(".carrito-producto-eliminar")
 const botonVaciar = document.querySelector("#carrito-botones-eliminar")
 const total = document.querySelector("#total")
+const comprar = document.querySelector("#carrito-botones-comprar")
+
 
 function cargaDeProducto(){
 if(productoEnCarrito && productoEnCarrito.length > 0){
@@ -87,3 +89,15 @@ function miTotal(){
     const elTotal = productoEnCarrito.reduce((acc,producto) => acc + (producto.precio * producto.cantidad),0)
 total.innerText = ` $ ${elTotal} USD`
 }
+
+comprar.addEventListener("click",() =>{
+    Swal.fire({
+  icon: 'error',
+  title: 'Oops...',
+  text: 'parece que hubo un error',
+  footer: '<a href="">Why do I have this issue?</a>'
+})
+vacio()
+})
+
+

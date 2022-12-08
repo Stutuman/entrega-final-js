@@ -2,7 +2,6 @@
     margin: 0;
 padding: 0;
 box-sizing: border-box;
-font-family: 'Bebas Neue', cursive;
 
 }
 h1,h2,h3,h4,h5,h6,p,a, input, textarea, ul{
@@ -38,6 +37,9 @@ aside{
     font-weight: 400;
     font-size: 2.3rem;
     
+}
+.pokeparada img{
+    height: 300px !important;
 }
 
 .menu{
@@ -179,6 +181,15 @@ padding-right: 1.5rem;
     text-transform: uppercase;
     cursor: pointer;
 }
+.carrito-botones-eliminar:hover{
+    border: 0;
+        background-color: rgb(214, 185, 147);
+        padding: 1rem;
+        border-radius: 1rem;
+        color: black;
+        text-transform: uppercase;
+        cursor: pointer;
+}
 .carrito-botones-der{
     display: flex;
 }
@@ -203,6 +214,20 @@ padding-right: 1.5rem;
           border-bottom-right-radius: 1rem;
         
 }
+.carrito-botones-comprar:hover{
+    border: 0;
+        background-color: #f17c4e;
+        padding: 1rem;
+        color: black;
+        text-transform: uppercase;
+        cursor: pointer;
+        border-top-right-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+}
 .disabled{
     display: none;
+}
+.carrito-producto-eliminar:hover{
+width: 2rem;
+height: 2rem;
 }

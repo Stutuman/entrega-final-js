@@ -12,12 +12,27 @@ let stockProductos = [
 {id:"webcams-03",categoria:{nombre:"Webcams",id:"webcams"}, titulo: "webcam genius", precio: 18 , img: 'imagesProducts/webcamgenius.jpg'},
 {id:"webcams-04",categoria:{nombre:"Webcams",id:"webcams"}, titulo: "webcam logitech", precio: 28 , img: 'imagesProducts/webcamlogitech.jpg'},
 ]
+fetch("productos.json")
+ .then(response => response.json())
+ .then(data => {console.log(data)})
 
 const contengoProductos= document.querySelector("#contenedor-productos");
 const botonesMenu = document.querySelectorAll(".boton-init")
 const titulo = document.querySelector("#title-init")
 let agregar = document.querySelectorAll(".producto-agregar")
 const number = document.querySelector("#number")
+const pokemon = document.querySelector(`#pokeparada`)
+ 
+
+fetch("https://pokeapi.co/api/v2/pokemon/1 ")
+.then(Response => Response.json())
+.then(poke => {
+
+    pokemon.innerHTML = `
+    <img src=${poke.sprites.front_default} />
+    `
+
+})
 
 function cargarProductos(elegirProducto){
 contengoProductos.innerHTML = "";
@@ -36,7 +51,6 @@ elegirProducto.forEach(producto =>{
                 contengoProductos.append(div);
 })
 botonesNuevos()
-console.log(agregar)
 }
 
 cargarProductos(stockProductos);
