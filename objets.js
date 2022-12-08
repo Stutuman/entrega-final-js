@@ -24,15 +24,18 @@ const number = document.querySelector("#number")
 const pokemon = document.querySelector(`#pokeparada`)
  
 
-fetch("https://pokeapi.co/api/v2/pokemon/1 ")
+
+setTimeout(()=>{
+    fetch("https://pokeapi.co/api/v2/pokemon/1 ")
 .then(Response => Response.json())
 .then(poke => {
 
     pokemon.innerHTML = `
     <img src=${poke.sprites.front_default} />
     `
-
 })
+},1000)
+
 
 function cargarProductos(elegirProducto){
 contengoProductos.innerHTML = "";
